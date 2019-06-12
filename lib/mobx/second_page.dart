@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 
-import 'model/counter.dart';
+import 'store/counter.dart';
 
 class SecondPage extends StatefulWidget {
   @override
