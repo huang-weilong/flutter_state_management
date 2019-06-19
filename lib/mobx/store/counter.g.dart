@@ -9,6 +9,12 @@ part of 'counter.dart';
 // ignore_for_file: non_constant_identifier_names, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars
 
 mixin _$Counter on CounterBase, Store {
+  Computed<bool> _$isEvenComputed;
+
+  @override
+  bool get isEven =>
+      (_$isEvenComputed ??= Computed<bool>(() => super.isEven)).value;
+
   final _$countAtom = Atom(name: 'CounterBase.count');
 
   @override

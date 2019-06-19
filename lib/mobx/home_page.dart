@@ -23,6 +23,8 @@ class _HomePageState extends State<HomePage> {
             Text('计算结果:'),
             // 将要观察的组件用Observer包裹
             Observer(builder: (_) => Text('${counter.count}')),
+            Text('是否是偶数:'),
+            Observer(builder: (_) => Text('${counter.isEven}')),
             SizedBox(height: 100),
             RaisedButton(
               child: Text('加'),

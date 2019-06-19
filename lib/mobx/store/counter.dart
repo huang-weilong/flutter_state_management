@@ -34,4 +34,7 @@ abstract class CounterBase implements Store {
   void setCount(int value) {
     this.count = value;
   }
+
+  @computed
+  bool get isEven => count % 2 == 0;
 }
