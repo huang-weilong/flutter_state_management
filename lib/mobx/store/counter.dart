@@ -10,13 +10,14 @@ class Counter = CounterBase with _$Counter;
 /// 加入一个可观察属性 [count]
 /// 编写相关方法
 /// 命令行运行 flutter packages pub run build_runner build
+/// 或者flutter packages pub run build_runner build --delete-conflicting-outputs
 /// 如果需要更改counter.dart时实时更新 counter.g.dart 可以命令行输入
 /// flutter packages pub run build_runner watch
 
 /// 全局 counter 对象
 final Counter counter = Counter();
 
-abstract class CounterBase implements Store {
+abstract class CounterBase with Store {
   @observable
   int count = 0;
 
@@ -37,4 +38,9 @@ abstract class CounterBase implements Store {
 
   @computed
   bool get isEven => count % 2 == 0;
+
+  @override
+  void dispose() {
+    super.dispose();
+  }
 }
